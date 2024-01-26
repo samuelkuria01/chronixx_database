@@ -1,12 +1,12 @@
 databases:
-  - name: history
+  - name: mynewsite
     databaseName: livity
     user: chronixx
     plan: free
 
 services:
   - type: web
-    name: history
+    name: mynewsite
     runtime: ruby
     plan: free
     buildCommand: "./bin/render-build.sh"
@@ -15,7 +15,7 @@ services:
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: history
+          name: mynewsite
           property: connectionString
       - key: RAILS_MASTER_KEY
         sync: false
